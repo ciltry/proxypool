@@ -26,8 +26,24 @@ public class ServerDTO extends BaseDTO<Server> {
 	private String alias;
 	private String memo;
 	private String status;
+	private String doa;
+	private String country;
 	
 	
+	
+	
+	public String getDoa() {
+		return doa;
+	}
+	public void setDoa(String doa) {
+		this.doa = doa;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -103,6 +119,8 @@ public class ServerDTO extends BaseDTO<Server> {
 		model.setSpeed(dto.getSpeed());
 		model.setType(dto.getType());
 		model.setStatus(dto.getStatus());
+		model.setDoa(dto.getDoa());
+		model.setCountry(dto.getCountry());
 		return model;
 	}
 	@Override
@@ -120,5 +138,7 @@ public class ServerDTO extends BaseDTO<Server> {
 		dto.setSpeed(model.getSpeed());
 		dto.setType(model.getType());
 		dto.setStatus(model.getStatus());
+		dto.setDoa(model.getDoa());
+		dto.setCountry(model.getCountry());
 	}
 }

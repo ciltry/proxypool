@@ -41,6 +41,11 @@ public class Server extends BaseModel{
 	@FieldMapping("status")
 	public static final String COLUMN_STATUS = "STATUS";
 	
+	@FieldMapping("doa")
+	public static final String COLUMN_DOA = "DOA";
+	@FieldMapping("country")
+	public static final String COLUMN_COUNTRY = "COUNTRY";
+	
 	/**
 	 * UID
 	 */
@@ -68,6 +73,15 @@ public class Server extends BaseModel{
 	private String memo;
 	@Field(comment="状态 1 可用 0 不可用", type=FieldType.CHAR, size=1, columnName=COLUMN_STATUS)
 	private String status;
+	
+	/**
+	 * 匿名度Degree of Anonymity
+	 */
+	@Field(comment="匿名度", type=FieldType.VARCHAR2, size = 200, columnName=COLUMN_DOA)
+	private String doa;
+	
+	@Field(comment="国家", type=FieldType.VARCHAR2, size = 200, columnName=COLUMN_COUNTRY)
+	private String country;
 	
 	
 	
@@ -126,8 +140,19 @@ public class Server extends BaseModel{
 		this.gmtLastTest = gmtLastTest;
 	}
 	
-	
 
+	public String getDoa() {
+		return doa;
+	}
+	public void setDoa(String doa) {
+		this.doa = doa;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
